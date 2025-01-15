@@ -601,7 +601,7 @@ void free_mem(char** dictArray, int dictSize, char** guessedWords,
  */
 const char* get_wordiply_starter_word(int wordLen) {
     // Arrays of 3 and 4 letter combinations
-    static const char* threeLetterCombos[] {"ism", "ion", "cat", "tac", "arc", "ack", "ite", "ati", "len", "ish"};
+    static const char* threeLetterCombos[] = {"ism", "ion", "cat", "tac", "arc", "ack", "ite", "ati", "len", "ish"};
     static const char* fourLetterCombos[] = {"ties", "rate", "tion", "ance", "pris", "ling", "nect", "ment", "fied", "prop"};
 
     // Gets sizes of the arrays
