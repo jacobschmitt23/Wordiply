@@ -9,5 +9,5 @@
   <li>Ensure all files are in the same directory and navigate to that directory</li>
   <li>Compile the project and create the executable by using the <b>make</b> command in the terminal</li>
   <li>After successfully building the project, run the game with the following command: <b>./uqwordiply</b></li>
-  <li>Run the <b>Run the Data Warehouse Creation + Report Generation.ipynb</b> notebook to process the generated data, transform it into a warehouse format, and generate the desired reports</li>
+  <li></li>
   </ol>
