@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include <csse2310a1.h>
+#include <time.h>
 
 #define MAX_LINE_LENGTH 52
 
@@ -588,6 +588,35 @@ void free_mem(char** dictArray, int dictSize, char** guessedWords,
 	int numGuesses) {
     free_array(dictArray, dictSize);
     free_array(guessedWords, numGuesses);
+}
+
+/* get_wordiply_starter_word()
+ * ----------------------------
+ * Rudimentary function to get a starter word for the game based on the
+ * length provided to the function. This method was originally defined in a
+ * given .h file but was developed here to enable the game to work.
+ *
+ * wordLen: integer that holds the size of the starting word to be used in
+ *     the game.
+ */
+const char* get_wordiply_starter_word(int wordLen) {
+    // Arrays of 3 and 4 letter combinations
+    static const char* threeLetterCombos[] {"ism", "ion", "cat", "tac", "arc", "ack", "ite", "ati", "len", "ish"};
+    static const char* fourLetterCombos[] = {"ties", "rate", "tion", "ance", "pris", "ling", "nect", "ment", "fied", "prop"};
+
+    // Gets sizes of the arrays
+    size_t threeLen = sizeof(threeLetterCombos) / sizeof(threeLetterCombos[0]);
+    size_t fourLen = sizeof(fourLetterCombos) / sizeof(fourLetterCombos[0]);
+
+    // Seed the random number generator
+    srand((unsigned int)time(NULL));
+
+    // Pick a random string from the specified array based on the input
+    if (wordLen == 3) {
+        return threeLetterCombos[rand() % threeLen];
+    } else if (wordLen == 4) {
+        return fourLetterCombos[rand() % fourLen];
+    }
 }
 
 /* main()
