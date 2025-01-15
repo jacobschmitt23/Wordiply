@@ -635,7 +635,7 @@ int main(int argc, char** argv) {
     int dictionaryIndex = get_index_of_dictionary_file(argc, argv);
     FILE* dictionary;
     if (dictionaryIndex == -1) {
-	dictionary = fopen("/usr/share/dict/words", "r");
+	dictionary = fopen("./dictionary.txt", "r");
     } else {
 	dictionary = fopen(argv[dictionaryIndex], "r");
 	if (dictionary == 0) {
